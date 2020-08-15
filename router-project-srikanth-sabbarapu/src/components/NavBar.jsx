@@ -57,7 +57,7 @@ const NavBar = props => {
             {isAuth?
             // logout
               <Link className="nav-link " to="/">
-              <span>{userName}</span> Logout
+              <span className='text-danger'>{userName}</span> Logout
             </Link>
             :
             // login
