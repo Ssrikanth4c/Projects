@@ -54,9 +54,18 @@ const NavBar = props => {
 
             {/* ******************************** Login Page ************************************* */}
             <li className="nav-item active btn">
+            {isAuth?
+            // logout
+              <Link className="nav-link " to="/">
+              Logout
+            </Link>
+            :
+            // login
               <Link className="nav-link " to="/login">
-                {isAuth?'Logout':'Login'}
+                Login
               </Link>
+              
+            }
             </li>
             {/* ******************************** cart Page ************************************* */}
             <li className="nav-item active btn">
