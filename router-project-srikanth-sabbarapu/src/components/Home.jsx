@@ -128,10 +128,9 @@ const Home = () => {
       </div>
       <div className="jumbotron jumbotron-fluid">
         <div className="container">
-          <h1 className="display-4">Fluid jumbotron</h1>
+          <h1 className="display-4">BigBrother</h1>
           <p className="lead">
-            This is a modified jumbotron that occupies the entire horizontal
-            space of its parent.
+            BigBrother is an Indian e-commerce company based in Bangalore, Karnataka, India.
           </p>
         </div>
       </div>
