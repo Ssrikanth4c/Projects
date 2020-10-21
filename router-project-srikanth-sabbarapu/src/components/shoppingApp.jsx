@@ -94,7 +94,7 @@ export default class ShoppingApp extends React.Component {
           3. footer          
       */}
         <HashRouter>
-          <NavBar userName={this.state.loginUser} isAuth={this.state.isAuth}/>
+          <NavBar userName={this.state.userName} cartCount={this.state.cart.length} isAuth={this.state.isAuth}/>
           <Routes app={allMethods} />
           <Footer />
         </HashRouter>

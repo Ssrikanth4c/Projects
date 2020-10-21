@@ -5,11 +5,11 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "1.2.29",
+    "@fortawesome/fontawesome-svg-core": "^1.2.29",
     "@fortawesome/free-brands-svg-icons": "5.13.1",
     "@fortawesome/free-regular-svg-icons": "5.13.1",
-    "@fortawesome/free-solid-svg-icons": "5.13.1",
-    "@fortawesome/react-fontawesome": "0.1.11",
+    "@fortawesome/free-solid-svg-icons": "^5.13.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "font-awesome": "4.7.0",
     "react": "16.12.0",
     "react-dom": "16.12.0",
@@ -31,5 +31,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "homepage":"."
+  "homepage": "."
 }

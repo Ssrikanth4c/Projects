@@ -1,18 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styles from './products.module.css';
+
 const Products = props => {
   // console.log(props);
   const { match } = props;
   return (
     <div>
-      <h2 className="text-left h2 m-2">#Shop Top Categories</h2>
+      <h2 className="text-center h2 m-2">Shop Top Categories</h2>
       <hr />
       <div className="text-center">
-        <div className="container">
-          <div className="row">
+        <div className={`${styles.products} container`}>
+          <div className=" row justify-content-center">
             <div className="col-lg-4 col-md-6 ">
               <Link to={`${match.url}/laptops`}>
-                <div className="card">
+                <div className="card mb-3">
                   <img
                     src="https://images.unsplash.com/photo-1504707748692-419802cf939d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
                     alt="best selling Laptop"
@@ -29,7 +31,7 @@ const Products = props => {
             </div>
             <div className="col-lg-4 col-md-6">
               <Link to={`${match.url}/trimmers`}>
-                <div className="card">
+                <div className="card mb-3">
                   <img
                     alt=""
                     src="https://images.unsplash.com/photo-1508380702597-707c1b00695c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
@@ -44,10 +46,9 @@ const Products = props => {
                 </div>
               </Link>
             </div>
-
             <div className="col-lg-4 col-md-6">
               <Link to={`${match.url}/headphones`}>
-                <div className="card">
+                <div className="card mb-3">
                   <img
                     alt=""
                     src="https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
@@ -64,7 +65,7 @@ const Products = props => {
             </div>
             <div className="col-lg-4 col-md-6">
               <Link to={`${match.url}/memorycards`}>
-                <div className="card">
+                <div className="card mb-3">
                   <img
                     alt=""
                     src="https://images.unsplash.com/photo-1589447388175-ac47d31be950?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"

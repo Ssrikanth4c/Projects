@@ -7,7 +7,7 @@ export default function App() {
   };
 
   return (
-    <div className="App" style={bgimage}>
+    <div className="App">
       {/* <img src="/images/bgimg.png" alt="" /> */}
       <ShoppingApp />
     </div>

@@ -7,44 +7,57 @@ const Cart = props => {
   const style={ display: 'flex',  justifyContent:'center', height: '100vh', alignItems:'center'}
   console.log(cartItems);
   if(!isAuth)
+  // if(0)
     return (
       <Redirect  to='/login'/>
     );
   return(
     <div >
-      <div className="container justify-content-center">
-        <div className="h2 text-info font-weight-bold">cart</div>
-          <div className="row border ">  
-            <table className="table table-striped table-dark ">
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Name</th>
-                      <th scope="col">Image</th>
-                      <th scope="col">Qty</th>
-                      <th scope="col">Price</th>
-                    </tr>
-                  </thead>
-               {
-                cartItems?.map((item, ind)=>{
+      <h2 className='font-weight-bold'>Cart items</h2>
+      {
+      !cartItems.length?
+      // 0?
+      <div className="cart-container">
+        <div className='empty-cart'>
+          <h1>Cart is Empty</h1>
+        </div>
+      </div>
+      :
+      <div className=" cart-container container justify-content-center">
+          <div className="row justify-content-center"> 
+           {
+              cartItems?.map((item, ind)=>{
                   return(
-                    <tbody>
-                      <tr>
-                        <th scope="row">{Number(ind)+1}</th>
-                        <td className='text-truncate font-weight-bold'>{item.name}</td>
-                        <td>
-                          <img src={item.img} alt={item.name} width="100px" height="100px"/>
-                        </td>
-                        <td>{item.qty}</td>
-                        <td>{Number(item.price)*Number(item.qty)}</td>
-                      </tr>
-                    </tbody>
-                )
+                      <div className="col-md-6 col-lg-4 border p-2">
+              <div class="card  w-100">
+                <div class="row no-gutters">
+                  <div class="col-4">
+                    <img src={item.img} class="card-img" width="100px" height="100px" alt="..." />
+                  </div>
+                  <div class="col-8">
+                    <div class="card-body">
+                      <p class="card-text text-truncate h5 font-weight-bold">{item.name}</p>
+                      <div className="row justify-content-between">
+                        <div className="col-4 d-flex align-items-end">
+                          <p className=' border bg bg-danger rounded px-2 text-white'>Qty</p>
+                          <p className='border flex-fill font-weight-bold'>{item.qty}</p>  
+                        </div>
+                        <div className="col-8 d-flex align-items-end">
+                          <p className=' border bg bg-danger rounded px-2 text-white'>Price</p>
+                          <p className='border flex-fill font-weight-bold'>{Number(item.price)*Number(item.qty)}</p>  
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>            
+              )
               })
-            }
-            </table>
+           }
           </div>
       </div>
+      }
     </div>
   )
 };

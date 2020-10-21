@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./login.module.css";
 import { Redirect } from "react-router-dom";
+
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -24,10 +25,9 @@ class Login extends React.Component {
     const { app } = this.props;
     if (app.isAuthenticate()) return <Redirect to="/" />;
     return (
-      <div style={{ display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh' }}>
-        <div className="container">
-          <div className="container my-5">
-            <h3 className="text-danger font-weight-bold">Login Page</h3>
+      <div>
+        <div className={`container  ${styles.loginform}`}>
+            <h3 className=" font-weight-bold">Login Page</h3>
             <form onSubmit={this.submitHandle}>
               {/* *********** User Name ************** */}
               <div className="form-group">
@@ -35,10 +35,10 @@ class Login extends React.Component {
                 <input
                   type="text"
                   className="form-control text-center border border-info"
-                  placeholder="User Name"
+                  placeholder="User Name - admin"
                   value={this.state.name}
                   name="name"
-                  autocomplete='off'
+                  autoComplete='off'
                   onChange={this.handleChange}
                 />
               </div>
@@ -49,9 +49,9 @@ class Login extends React.Component {
                 <input
                   type="password"
                   className="form-control text-center border border-info"
-                  placeholder="Password"
+                  placeholder="password - admin"
                   name="password"
-                  autocomplete='off'
+                  autoComplete='off'
                   value={this.state.password}
                   onChange={this.handleChange}
                 />
@@ -62,7 +62,6 @@ class Login extends React.Component {
               </button>
             </form>
           </div>
-        </div>
       </div>
     );
   }

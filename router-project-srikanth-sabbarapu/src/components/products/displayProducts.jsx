@@ -1,15 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 const DisplayProducts = props => {
   const { app } = props;
   const match = props.match;
   // console.log(match);
   const productItem = props.productItem;
+
   const item = productItem.map(item => (
     <div key={item.id} className="col-sm-6 col-md-6 col-lg-4 my-2">
       <div className="card" style={{ width: "18rem" }}>
         {/* <div className="card-img-top m-5 w-75"> */}
-        <img src={item.img} alt="" style={{ height: 250, width: "100%" }} />
+        <img src={item.img} alt="" style={{ height: 250, padding:'2px', width: "100%" }} />
         {/* </div> */}
         <div className="card-body">
           <div className="card-title">
@@ -19,7 +21,7 @@ const DisplayProducts = props => {
           <div className="text-center mb-2">
             <Link to={`${match.url}/${item.id}`}>
               <button
-                className="btn btn-block btn-primary"
+                className="btn btn-block btn-success"
                 onClick={() => handleClick(item.id)}
               >
                 Add to Cart
@@ -39,12 +41,12 @@ const DisplayProducts = props => {
   // console.log(productItem);
   return (
     <div>
-      <h2 className="text-info font-weight-bold text-uppercase h2">
+      <h2 className="font-weight-bold text-uppercase h2">
         {" "}
         <u>{props.title}</u>
       </h2>
       <div className="container">
-        <div className="row">{item}</div>
+        <div className="row align-items-center justify-content-center">{item}</div>
       </div>
     </div>
   );

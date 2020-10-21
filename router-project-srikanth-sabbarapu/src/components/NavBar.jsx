@@ -8,10 +8,10 @@ import "./fontawesome/fontawesome";
 
 // *******stateless function component*****
 const NavBar = props => {
-  const {userName}=props, {isAuth}= props
+  const {userName, isAuth, cartCount}= props
   return (
     <div>
-      <nav className="navbar navbar-expand-md navbar-light bg-light ">
+      <nav className="navbar sticky-top navbar-expand-md navbar-light bg-light ">
         <Link className="navbar-brand" to="/">
           <p id="logo">Big Brother</p>
         </Link>
@@ -26,9 +26,8 @@ const NavBar = props => {
         >
           <span className="navbar-toggler-icon" />
         </button>
-
         <div
-          className="collapse navbar-collapse justify-content-end"
+          className="collapse  navbar-collapse justify-content-end"
           id="navbarTogglerDemo02"
         >
           <ul className="nav nav-pills navbar-nav ">
@@ -54,18 +53,9 @@ const NavBar = props => {
 
             {/* ******************************** Login Page ************************************* */}
             <li className="nav-item active btn">
-            {isAuth?
-            // logout
-              <Link className="nav-link " to="/">
-              <span className='text-danger'>{userName}</span> Logout
-            </Link>
-            :
-            // login
               <Link className="nav-link " to="/login">
-                Login
+                {isAuth?'Logout':'Login'}
               </Link>
-              
-            }
             </li>
             {/* ******************************** cart Page ************************************* */}
             <li className="nav-item active btn">
@@ -77,6 +67,11 @@ const NavBar = props => {
                   size="2x"
                 />
               </Link>
+              <div className="cartCount px-2  text-right">
+                {
+                  cartCount?cartCount :'0'
+                }
+              </div>
             </li>
           </ul>
         </div>
